@@ -1,7 +1,7 @@
 import React from 'react'
 
 import Footer from '../../components/Footer/Footer'
-import './styles/contactus.css'
+import styles from './styles/contactus.module.css'
 
 export default function ContactUs() {
     return(

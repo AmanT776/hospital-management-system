@@ -5,7 +5,7 @@ import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import CardActionArea from '@mui/material/CardActionArea';
 
-import './styles/cards.css'
+import './styles/cards.module.css'
 
 const cards = [
   {

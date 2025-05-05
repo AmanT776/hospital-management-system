@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import CardActionArea from '@mui/material/CardActionArea';
 
-import './styles/styles.css'
+import './styles/why.module.css'
 
 import CardActions from '@mui/material/CardActions';
 const info = [

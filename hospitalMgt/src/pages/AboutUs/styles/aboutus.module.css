@@ -1,0 +1,99 @@
+.about-us{
+    width: 100%;
+    padding: 1em 0 2em 0;
+}
+.about-banner{
+    max-width: 50%;
+    margin: 0 auto;
+}
+.about-banner img{
+    width: 100%;
+    height: auto;
+}
+.about-text{
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+.block-text{
+    margin-top: 20px;
+    padding-left: 20px;
+}
+.about-text>h1{
+    color: #0d8686;
+    font-size: 2rem;
+    text-align: center;
+}
+.about-text>p{
+    margin-top: 20px;
+}
+.about-text>p,
+.block-text>p{
+    color: #424242;
+}
+.block-text>h2{
+    color: #2563eb;
+    font-size: 1.75rem;
+}
+.about-card{
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+@media(min-width: 600px){
+    .about-us{
+        width: 100%;
+    }
+    .about-card{
+        width: 100%;
+        padding: 20px;
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+    }
+}
+@media(min-width: 1024px){
+    .about-us{
+        width: 100%;
+        margin: 0 auto;
+        margin-bottom: 200px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .about-card{
+        width: 80%;
+        height: 200px;
+        display: grid;
+        grid-template-columns: repeat(3, 32%); 
+       
+    }
+    .about-text{
+        margin-right: 100px;
+
+    }
+    .about-text>h1{
+        font-size: 2.5rem;
+    }
+    .about-text>p,
+    .block-text>p{
+        font-size: 1.5rem;
+    }
+    .about-banner{
+        display: flex;
+        justify-content: center;
+    }
+    .about-banner img{
+        width: 60%;
+        height: auto; 
+    }
+    .container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+}

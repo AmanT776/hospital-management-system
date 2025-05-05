@@ -2,10 +2,10 @@ import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import {useState} from 'react'
 
-import Admin from '../../pages/Admin/Admin'
+import Admin from '../AdminNav/AdminNav'
 
 import logo from '../../assets/logo.png'
-import './styles/login.css'
+import styles from './styles/login.module.css'
 import leftArrow from '../../assets/left-arrow.png'
 
 export default function Login({user}) {
@@ -28,9 +28,11 @@ export default function Login({user}) {
         setErrors(validationErrors)
         if(Object.keys(validationErrors).length === 0){
             if(user === 'Admin'){
-                navigate('/Admin')
-            }else{
+                navigate('/Admin/addDoctor')
+            }else if(user==='Doctor'){
                 navigate('/Doctor')
+            }else if(user === 'Reception'){
+                navigate('/Reception/addPatient')
             }
         }
     }
@@ -49,32 +51,38 @@ export default function Login({user}) {
         return validationErrors
     }
     return(
-        <section className='login'>
-                <img src={leftArrow} className='left-arrow' onClick={()=>navigate('/login')}/>
-                <div className="img-container">
-                        <img className='login-logo' src={logo} alt='logo'/>
-                </div>
-                <form onSubmit={handleSubmit} method='GET' className='login-form'>
+        <section className={styles.login}>
+            <img src={leftArrow} className={styles['left-arrow']} onClick={()=>navigate('/login')} alt="Back"/>
+            <div className={styles['img-container']}>
+                <img className={styles['login-logo']} src={logo} alt='logo'/>
+            </div>
+            <form onSubmit={handleSubmit} method='GET' className={styles['login-form']}>
                 <h1>{user} Login</h1>
-                <div className='input-container'>
+                <div className={styles['input-container']}>
                     <label htmlFor='username'>
                         Username
                     </label>
                     <input 
-                    type="text" id='username' placeholder='Enter your username'
-                    name='username' 
-                    onChange={handleChange}/>
-                    {errors.username && <p className='error-text'>{errors.username}</p>}
+                        type="text" 
+                        id='username' 
+                        placeholder='Enter your username'
+                        name='username' 
+                        onChange={handleChange}
+                    />
+                    {errors.username && <p className={styles['error-text']}>{errors.username}</p>}
                 </div>
-                <div>
+                <div className={styles['input-container']}>
                     <label htmlFor='password'>
                         Password
                     </label>
                     <input 
-                    type="password" id='password' placeholder='******' 
-                    name='password'
-                    onChange={handleChange}/>
-                    {errors.password && <p className='error-text'>{errors.password}</p>}
+                        type="password" 
+                        id='password' 
+                        placeholder='******' 
+                        name='password'
+                        onChange={handleChange}
+                    />
+                    {errors.password && <p className={styles['error-text']}>{errors.password}</p>}
                 </div>
                 <button type='submit'>Login</button>
             </form>

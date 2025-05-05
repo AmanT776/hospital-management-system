@@ -1,0 +1,20 @@
+table{
+    width: 70%;
+    margin: 20px auto 0 auto;
+    border-collapse: collapse;
+
+}
+thead > tr{
+    background-color: #0f1729;
+    color: whitesmoke;
+    font-weight: 500;
+    font-size: 1.25rem;
+}
+thead > tr > th{
+    border-color: #2C2C2C;
+}
+tbody > tr{
+    font-weight: 500;
+    font-size: 1.25rem;
+    text-align: center;
+}

@@ -1,0 +1,44 @@
+.card>h1{
+    font-size: 2rem;
+    color: #2F8CE9;
+    font-weight: bold;
+    color: #333333;
+}
+.card>p{
+    font-size: 1.125rem;
+    color: #485566;
+    text-align: center;
+}
+.card{
+    width: 90%;
+    height: 200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background-color: #AEAEAE;
+
+}
+
+.card:hover{
+    background: #f5f3ff;
+    cursor: pointer;
+}
+@media(min-width: 600px){
+    .card{
+        height: 400px;
+    }
+}
+@media(min-width: 1024px){
+    .card-title{
+        font-size: 2.5rem;
+    }
+    .card>p{
+        font-size: 1.25rem;
+    }
+}

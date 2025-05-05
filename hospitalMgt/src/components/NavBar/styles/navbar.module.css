@@ -1,0 +1,22 @@
+.active{
+    border-bottom: 3px solid #2563eb;
+    transition: border-bottom 0.1s linear;
+}
+
+.nav-link {
+    color: whitesmoke;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #2563eb;
+    border-bottom: 3px solid #2563eb;
+}
+
+.active {
+    color: whitesmoke;
+    border-bottom: 3px solid #2563eb;
+    font-weight: bold;
+    text-decoration: none;
+}

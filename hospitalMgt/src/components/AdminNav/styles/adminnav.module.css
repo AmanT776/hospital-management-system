@@ -1,0 +1,43 @@
+nav{
+    background-color: hsl(222, 47%, 11%);
+    padding: 20px;
+}
+nav > ul {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   max-height: 50%;
+   transition: max-height 0.5s ease;
+   display: none;
+}
+nav > ul > li {
+    list-style: none;
+    width: 100%;
+    font-size: 1rem;
+    margin: 10px 0;
+    background: #16223D;
+    text-align: center;
+    padding: 10px;
+}
+.nav-link{
+    color: #E3F1FF;
+    text-decoration: none;
+    transition: border-bottom 0.3s ease;
+}
+.active{
+    text-decoration: none;
+    color: #2463EB;
+    border-bottom: 1px solid;
+}
+@media(min-width: 1024px){
+    nav>ul{
+        display: flex;
+        flex-direction: row;
+    }
+    nav>ul>li{
+        background: none;
+    }
+    nav>.menuIcon{
+        display: none !important;  
+    }
+}

@@ -4,7 +4,7 @@ import {useState} from 'react'
 import {NavLink} from 'react-router-dom';
 
 import logo from '../../assets/logo.png';
-import './styles/navbar.css'
+import styles from './styles/navbar.module.css'
 
 export default function NavBar(){
   const [isDrawerOpen,setIsDrawerOpen] = useState(false);
@@ -28,167 +28,160 @@ export default function NavBar(){
         justifyContent: 'space-between',
         alignItems: 'center',
         padding: '20px',
-        backgroundColor: '#0f172a'
+        backgroundColor: '#0f172a',
       }}>
         <img src={logo} style={{
           width: '100px',
-          height: 'autos'
-        }}/>
-        <IconButton sx={{
-        display:{
-          md: 'none',
-          lg: 'none',
-          xl: 'none',
-        }
-      }} onClick={toggleDrawer}>
-        <MenuIcon sx={{
-          fontSize: '3rem',
-          color: '#fff'
-        }}/>
-      </IconButton>
-      <Drawer open={isDrawerOpen} anchor="left" sx={{width: '100%'}}>
+          height: 'auto'
+        }} alt="Hakim Logo"/>
+        <IconButton onClick={toggleDrawer}>
+          <MenuIcon sx={{
+            fontSize: '3rem',
+            color: '#fff'
+          }}/>
+        </IconButton>
+      </Box>
+
+      <Drawer open={isDrawerOpen} anchor="left" onClose={toggleDrawer}>
         <Box sx={{
           width: '250px',
-          padding: '20px'
-        
-        }}>
-          <Typography variant='h6' display={'inline'} marginRight={'60px'}>
-              Menu
-          </Typography>
-          <IconButton sx={{
-            display:{
-            md: 'none',
-            lg: 'none',
-            xl: 'none',
-        }
-      }} 
-      onClick={toggleDrawer}
-      >
-        <MenuIcon sx={{
-          fontSize: '3rem',
-        }}/>
-      </IconButton>
-      <List>
-        <ListItem sx={{}}>
-          <Typography  variant='h6'  marginRight={'60px'}>
-                  <NavLink to='/' style={{ color: '#343434',textDecoration: 'none' }}>
-                    Home
-                  </NavLink>
-          </Typography>
-        </ListItem> 
-        <ListItem>
-          <Typography variant='h6'  marginRight={'60px'}>
-                  <NavLink to='/services'  style={{color: '#343434', textDecoration: 'none' }}>
-                    Services
-                  </NavLink>
-          </Typography>
-        </ListItem> 
-        <ListItem>
-        <Typography variant='h6'  marginRight={'60px'}>
-                  <NavLink to='/about' style={{color: '#343434', textDecoration: 'none',}}>
-                    About Us
-                  </NavLink>
-          </Typography>
-        </ListItem> 
-        <ListItem>
-        <Typography variant='h6'  marginRight={'60px'}>
-                  <NavLink to='/contact' style={{color: '#343434', textDecoration: 'none' }}>
-                    Contactus
-                  </NavLink>
-          </Typography>
-        </ListItem> 
-        <ListItem>
-        <Typography variant='h6'  marginRight={'60px'}>
-                  <NavLink to='/login' style={{ color: '#343434', textDecoration: 'none' }}>
-                    Login
-                  </NavLink>
-          </Typography>
-        </ListItem> 
-      </List>  
-  
-        </Box>
-      </Drawer>
-      </Box> 
-
-{/* slider navigation for large screens */}
-
-        <Box sx={{
-          width: '100%',
-          padding: '10px',
-          justifyContent: 'space-around',
-          alignItems: 'center',
-          display:{
-            sm: 'none',
-            xs: 'none',
-            md: 'flex',
-            lg: 'flex',
-            xl: 'flex',
-          },
-          background: '#0F172A',
+          padding: '20px',
+          backgroundColor: '#0f172a',
+          height: '100%'
         }}>
           <Box sx={{
             display: 'flex',
+            justifyContent: 'space-between',
             alignItems: 'center',
-            gap: '5px'
+            marginBottom: '20px'
           }}>
-            <img src={logo} style={{height: '70px'}}/>
-            <Typography variant='h4' sx={{fontWeight: '900',color: 'whitesmoke'}}>Hakim</Typography>
+            <Typography variant='h6' color="white">
+              Menu
+            </Typography>
+            <IconButton onClick={toggleDrawer}>
+              <MenuIcon sx={{color: 'white'}}/>
+            </IconButton>
           </Box>
-          <List sx={{
-            display: 'flex',
-            justifyContent: 'center',
-          }}>
-        <ListItem sx={{'&:hover':{color: 'red'}}}>
-
-          <NavLink   to='/' style={ {color: 'whitesmoke',textDecoration: 'none' }}>
-            <Typography sx={{
-              
-              '&:hover':{borderBottom: '3px solid #2563eb'}
-              }} variant='p'  marginRight={'60px'}>
-              Home
-              </Typography>
-           </NavLink>
-          
-        </ListItem> 
-        <ListItem sx={{'&:hover':{color: 'red'}}}>
-          
-          <NavLink   to='/services' style={{ color: 'whitesmoke',textDecoration: 'none' }}>
-            <Typography sx={{'&:hover':{borderBottom: '3px solid #2563eb'}}} variant='p'  marginRight={'60px'}>
-              Services
-              </Typography>
-           </NavLink>
-          
-        </ListItem> 
-        <ListItem sx={{'&:hover':{color: 'red'}}}>
-          
-          <NavLink   to='/about' style={{ color: 'whitesmoke',textDecoration: 'none' }}>
-            <Typography sx={{'&:hover':{borderBottom: '3px solid #2563eb'}}} variant='p'  marginRight={'60px'}>
-              AboutUs
-              </Typography>
-           </NavLink>
-          
-        </ListItem> 
-        <ListItem sx={{'&:hover':{color: 'red'}}}>
-          
-          <NavLink   to='/contact' style={{ color: 'whitesmoke',textDecoration: 'none' }}>
-            <Typography sx={{'&:hover':{borderBottom: '3px solid #2563eb'}}} variant='p'  marginRight={'60px'}>
-              ContactUs
-              </Typography>
-           </NavLink>
-          
-        </ListItem> 
-        <ListItem sx={{'&:hover':{color: 'red'}}}>
-          
-          <NavLink   to='/login' style={{ color: 'whitesmoke',textDecoration: 'none' }}>
-            <Typography sx={{'&:hover':{borderBottom: '3px solid #2563eb'}}} variant='p'  marginRight={'60px'}>
-              Login
-              </Typography>
-           </NavLink>
-          
-        </ListItem> 
-      </List>  
+          <List>
+            <ListItem>
+              <NavLink 
+                to='/' 
+                className={({isActive}) => isActive ? styles.active : styles['nav-link']}
+                onClick={toggleDrawer}
+              >
+                Home
+              </NavLink>
+            </ListItem> 
+            <ListItem>
+              <NavLink 
+                to='/services' 
+                className={({isActive}) => isActive ? styles.active : styles['nav-link']}
+                onClick={toggleDrawer}
+              >
+                Services
+              </NavLink>
+            </ListItem> 
+            <ListItem>
+              <NavLink 
+                to='/about' 
+                className={({isActive}) => isActive ? styles.active : styles['nav-link']}
+                onClick={toggleDrawer}
+              >
+                About Us
+              </NavLink>
+            </ListItem> 
+            <ListItem>
+              <NavLink 
+                to='/contact' 
+                className={({isActive}) => isActive ? styles.active : styles['nav-link']}
+                onClick={toggleDrawer}
+              >
+                Contact Us
+              </NavLink>
+            </ListItem>
+            <ListItem>
+              <NavLink 
+                to='/login' 
+                className={({isActive}) => isActive ? styles.active : styles['nav-link']}
+                onClick={toggleDrawer}
+              >
+                Login
+              </NavLink>
+            </ListItem>
+          </List>
         </Box>
-     
+      </Drawer>
+
+      <Box sx={{
+        display: {
+          sm: 'none',
+          xs: 'none',
+          md: 'flex',
+          lg: 'flex',
+          xl: 'flex',
+        },
+        width: '100%',
+        padding: '10px',
+        justifyContent: 'space-around',
+        alignItems: 'center',
+        background: '#0F172A',
+      }}>
+        <Box sx={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: '5px'
+        }}>
+          <img src={logo} style={{height: '70px',marginLeft: "20px"}} alt="Hakim Logo"/>
+          <Typography variant='h4' sx={{fontWeight: '900',color: 'whitesmoke'}}>Hakim</Typography>
+        </Box>
+        <List sx={{
+          display: 'flex',
+          justifyContent: 'center',
+          width: "50%",
+          marginLeft: "auto"
+        }}>
+          <ListItem>
+            <NavLink 
+              to='/' 
+              className={({isActive}) => isActive ? styles.active : styles['nav-link']}
+            >
+              Home
+            </NavLink>
+          </ListItem> 
+          <ListItem>
+            <NavLink 
+              to='/services' 
+              className={({isActive}) => isActive ? styles.active : styles['nav-link']}
+            >
+              Services
+            </NavLink>
+          </ListItem> 
+          <ListItem>
+            <NavLink 
+              to='/about' 
+              className={({isActive}) => isActive ? styles.active : styles['nav-link']}
+            >
+              About Us
+            </NavLink>
+          </ListItem> 
+          <ListItem>
+            <NavLink 
+              to='/contact' 
+              className={({isActive}) => isActive ? styles.active : styles['nav-link']}
+            >
+              Contact Us
+            </NavLink>
+          </ListItem>
+          <ListItem>
+            <NavLink 
+              to='/login' 
+              className={({isActive}) => isActive ? styles.active : styles['nav-link']}
+            >
+              Login
+            </NavLink>
+          </ListItem>
+        </List>
+      </Box>
     </>
   )
 }
